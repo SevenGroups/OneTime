@@ -1,18 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.bw.com.onetimedemo.MainActivity">
 
-    <TextView
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/beijing1" />
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/fab_margin"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/ic_fanhui"
+        android:id="@+id/ym_fanhui" />
+    <ImageView
+        android:layout_width="@dimen/x60"
+        android:layout_height="@dimen/y50"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/a1"
+        android:layout_marginTop="@dimen/y130"
+        />
+    <Button
+        android:id="@+id/btn1"
+        android:textColor="@color/colorb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/y150"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/log_1"
+        android:drawableLeft="@drawable/ic_weixin1"
+        android:paddingLeft="@dimen/x60"
+        android:paddingRight="@dimen/x60"
+        android:text="    微信登录"
+        android:textSize="22dp" />
+    <Button
+        android:id="@+id/btn2"
+        android:textColor="#FFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/y85"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/log_2"
+        android:drawableLeft="@drawable/ic_qq"
+        android:paddingLeft="@dimen/x60"
+        android:paddingRight="@dimen/x60"
+        android:text="    Q Q 登录"
+        android:textSize="22dp" />
+    <TextView
+        android:id="@+id/qt_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:textColor="@color/colorb"
+        android:layout_marginBottom="20dp"
+        android:text="其他登录方式" />
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
