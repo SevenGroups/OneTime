@@ -1,4 +1,4 @@
-package tuijian.view.fragment;
+package tuijian.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,15 +10,19 @@ import android.view.ViewGroup;
 import com.bw.com.onetimedemo.R;
 
 /**
- * Created by tangxueqin on 2018/4/25.
+ * Created by Lenovo on 2018/4/25.
  */
 
-public class Fragment_tuijian extends Fragment {
+public class guanzhu extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_tuijian, container, false);
-        return view;
+        View inflate = inflater.inflate(R.layout.fragment_tuijian, null);
+        return inflate;
+    }
 
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
     }
 }

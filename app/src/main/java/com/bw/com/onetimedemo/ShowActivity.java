@@ -1,15 +1,12 @@
 package com.bw.com.onetimedemo;
-
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-
 import duanzi.view.fragment.Fragment_duanzi;
 import shiping.view.fragment.Fragment_shiping;
-import tuijian.view.fragment.Fragment_tuijian;
+import tuijian.view.Fragment.Fragment_tuijian;
 
 public class ShowActivity extends AppCompatActivity {
 
