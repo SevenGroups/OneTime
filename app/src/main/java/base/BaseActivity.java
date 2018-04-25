@@ -9,13 +9,15 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.zhy.autolayout.AutoLayoutActivity;
+
 import butterknife.ButterKnife;
 
 /**
  * Created by dell on 2018/3/10.
  */
 
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AutoLayoutActivity {
     private boolean isstatus=false;//沉浸式透明状态栏标识
     private boolean showActionBar=true;//是否显示标题栏ActionBar
     private boolean isFullScreen=false;//隐藏状态栏

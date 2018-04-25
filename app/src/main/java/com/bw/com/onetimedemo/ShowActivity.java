@@ -8,24 +8,34 @@ import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import base.BaseActivity;
 import duanzi.view.fragment.Fragment_duanzi;
 import shiping.view.fragment.Fragment_shiping;
 import tuijian.view.fragment.Fragment_tuijian;
 
-public class ShowActivity extends AppCompatActivity {
+public class ShowActivity extends BaseActivity {
 
     private FrameLayout zhan;
     private RadioGroup gr;
+<<<<<<< HEAD
     private RadioButton sy,zx,hq;
     private void setTextColor(RadioButton sy,RadioButton zx,RadioButton hq){
         sy.setTextColor(Color.BLUE);
         zx.setTextColor(Color.BLACK);
         hq.setTextColor(Color.BLACK);
     }
+=======
+    private RadioButton sy;
+
+
+>>>>>>> a035e0783f98ccd9c752614d4a51ab3bb8ea9a0a
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show);
+    public int bindLayout() {
+        return R.layout.activity_show;
+    }
+
+    @Override
+    public void initData() {
         //找控件
         zhan = (FrameLayout)findViewById(R.id.zhan);
         gr = (RadioGroup) findViewById(R.id.gr);
@@ -60,5 +70,6 @@ public class ShowActivity extends AppCompatActivity {
                 }
             }
         });
+
     }
 }

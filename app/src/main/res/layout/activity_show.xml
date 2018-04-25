@@ -10,7 +10,7 @@
     <FrameLayout
         android:id="@+id/zhan"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="0px"
         android:layout_weight="9"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -22,42 +22,42 @@
         android:id="@+id/gr"
         android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="0px"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal">
 
         <RadioButton
             android:id="@+id/shouye"
-            android:layout_width="0dp"
+            android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textColor="#1313FF"
             android:button="@null"
             android:gravity="center"
-            android:padding="10dp"
+            android:padding="10px"
             android:checked="true"
             android:drawableTop="@drawable/tuijian_selector"
             android:text="推荐" />
 
         <RadioButton
             android:id="@+id/zixuan"
-            android:layout_width="0dp"
+            android:layout_width="0px"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:button="@null"
             android:gravity="center"
-            android:padding="10dp"
+            android:padding="10px"
             android:drawableTop="@drawable/dz_selector"
             android:text="段子" />
 
         <RadioButton
             android:id="@+id/hangqing"
-            android:layout_width="0dp"
+            android:layout_width="0px"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:button="@null"
             android:gravity="center"
-            android:padding="10dp"
+            android:padding="10px"
             android:drawableTop="@drawable/sp_selector"
 
             android:text="视频" />
