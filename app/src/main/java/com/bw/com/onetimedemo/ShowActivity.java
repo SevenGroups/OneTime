@@ -1,39 +1,35 @@
 package com.bw.com.onetimedemo;
-<<<<<<< HEAD
-=======
+
+import base.BaseActivity;
+
 
 import android.graphics.Color;
->>>>>>> 721e7ce53e8fb56ad946ef6b71a87b3cfe9d557f
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-<<<<<<< HEAD
-=======
 
-import base.BaseActivity;
->>>>>>> a035e0783f98ccd9c752614d4a51ab3bb8ea9a0a
+
+
 import duanzi.view.fragment.Fragment_duanzi;
 import shiping.view.fragment.Fragment_shiping;
-import tuijian.view.Fragment.Fragment_tuijian;
+import tuijian.fragment.tuijian;
+
 
 public class ShowActivity extends BaseActivity {
 
     private FrameLayout zhan;
     private RadioGroup gr;
-<<<<<<< HEAD
-    private RadioButton sy,zx,hq;
+
+    private RadioButton zx,hq;
     private void setTextColor(RadioButton sy,RadioButton zx,RadioButton hq){
         sy.setTextColor(Color.BLUE);
         zx.setTextColor(Color.BLACK);
         hq.setTextColor(Color.BLACK);
     }
-=======
+
     private RadioButton sy;
 
 
->>>>>>> a035e0783f98ccd9c752614d4a51ab3bb8ea9a0a
     @Override
     public int bindLayout() {
         return R.layout.activity_show;
@@ -50,7 +46,7 @@ public class ShowActivity extends BaseActivity {
 
         //设置初始fragment页面
         getSupportFragmentManager().beginTransaction().
-                replace(R.id.zhan,new Fragment_tuijian()).commit();
+                replace(R.id.zhan,new tuijian()).commit();
 
         gr.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -58,7 +54,7 @@ public class ShowActivity extends BaseActivity {
                 switch (i){
                     case R.id.shouye:
                         getSupportFragmentManager().beginTransaction().
-                                replace(R.id.zhan,new Fragment_tuijian()).commit();
+                                replace(R.id.zhan,new tuijian()).commit();
                         setTextColor(sy,zx,hq);
                         break;
                     case R.id.zixuan:

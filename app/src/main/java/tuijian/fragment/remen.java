@@ -17,7 +17,7 @@ public class remen extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View inflate = inflater.inflate(R.layout.fragment_tuijian, null);
+        View inflate = inflater.inflate(R.layout.remen, null);
         return inflate;
     }
 
