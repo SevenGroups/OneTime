@@ -1,5 +1,6 @@
 package com.bw.com.onetimedemo;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,8 +16,12 @@ public class ShowActivity extends AppCompatActivity {
 
     private FrameLayout zhan;
     private RadioGroup gr;
-    private RadioButton sy;
-
+    private RadioButton sy,zx,hq;
+    private void setTextColor(RadioButton sy,RadioButton zx,RadioButton hq){
+        sy.setTextColor(Color.BLUE);
+        zx.setTextColor(Color.BLACK);
+        hq.setTextColor(Color.BLACK);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,11 +30,12 @@ public class ShowActivity extends AppCompatActivity {
         zhan = (FrameLayout)findViewById(R.id.zhan);
         gr = (RadioGroup) findViewById(R.id.gr);
         sy = (RadioButton) findViewById(R.id.shouye);
+        zx = (RadioButton) findViewById(R.id.zixuan);
+        hq = (RadioButton) findViewById(R.id.hangqing);
 
         //设置初始fragment页面
         getSupportFragmentManager().beginTransaction().
                 replace(R.id.zhan,new Fragment_tuijian()).commit();
-
 
         gr.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -38,14 +44,17 @@ public class ShowActivity extends AppCompatActivity {
                     case R.id.shouye:
                         getSupportFragmentManager().beginTransaction().
                                 replace(R.id.zhan,new Fragment_tuijian()).commit();
+                        setTextColor(sy,zx,hq);
                         break;
                     case R.id.zixuan:
                         getSupportFragmentManager().beginTransaction().
                                 replace(R.id.zhan,new Fragment_duanzi()).commit();
+                        setTextColor(zx,sy,hq);
                         break;
                     case R.id.hangqing:
                         getSupportFragmentManager().beginTransaction().
                                 replace(R.id.zhan,new Fragment_shiping()).commit();
+                        setTextColor(hq,sy,zx);
                         break;
 
                 }

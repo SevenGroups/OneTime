@@ -13,7 +13,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
-
     @BindView(R.id.ym_fanhui)
     ImageView ymFanhui;
     @BindView(R.id.btn1)

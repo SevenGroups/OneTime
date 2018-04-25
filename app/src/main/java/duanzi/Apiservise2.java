@@ -5,4 +5,5 @@ package duanzi;
  */
 
 public interface Apiservise2 {
+    
 }
