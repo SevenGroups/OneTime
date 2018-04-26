@@ -5,6 +5,7 @@ package com.bw.com.onetimedemo;
 import android.graphics.Color;
 import android.net.Uri;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -16,7 +17,13 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import tuijian.fragment.tuijian;
+
+import com.bw.com.onetimedemo.adapter.MysidepullAdapter;
+import com.bw.com.onetimedemo.bean.SidePullBean;
 import com.facebook.drawee.view.SimpleDraweeView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import base.BaseActivity;
 import duanzi.view.fragment.Fragment_duanzi;
@@ -36,6 +43,7 @@ public class ShowActivity extends BaseActivity {
     private RecyclerView r_v;
     private RadioGroup radio_group;
     private RadioButton radio_wdzp,radio_sz;
+    private List<SidePullBean> list=new ArrayList<>();
 
     private void setTextColor(RadioButton sy,RadioButton zx,RadioButton hq){
         sy.setTextColor(Color.BLUE);
@@ -109,6 +117,19 @@ public class ShowActivity extends BaseActivity {
                 }
             }
         });
+        SidePullBean bean=new SidePullBean(R.drawable.raw_1499933216,"我的关注");
+        SidePullBean bean1=new SidePullBean(R.drawable.raw_1499947358,"我的收藏");
+        SidePullBean bean2=new SidePullBean(R.drawable.raw_1499946865,"搜索好友");
+        SidePullBean bean3=new SidePullBean(R.drawable.raw_1499947389,"消息通知");
+        list.add(bean);
+        list.add(bean1);
+        list.add(bean2);
+        list.add(bean3);
+        MysidepullAdapter adapter=new MysidepullAdapter(this,list);
+        r_v.setLayoutManager(new LinearLayoutManager(ShowActivity.this));
+        r_v.setAdapter(adapter);
+
+
 
     }
     /**

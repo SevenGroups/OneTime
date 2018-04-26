@@ -86,16 +86,18 @@
        android:layout_width="400px"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="#888">
+        android:background="#fff">
 
-<include layout="@layout/side_pull_layout"/>
+<include layout="@layout/side_pull_layout"
+    android:id="@+id/w"/>
 
 
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="380px"
             android:id="@+id/recycler_view"
-            android:layout_below="@+id/sdv"></android.support.v7.widget.RecyclerView>
+            android:layout_marginTop="50px"
+            android:layout_below="@+id/w"></android.support.v7.widget.RecyclerView>
 <TextView
     android:id="@+id/text_yjms"
     android:layout_width="wrap_content"
@@ -105,21 +107,31 @@
     android:layout_below="@+id/recycler_view"
     />
      <RadioGroup
-         android:layout_alignParentBottom="true"
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
-         android:id="@+id/radio_group1">
+         android:id="@+id/radio_group1"
+         android:layout_alignParentBottom="true"
+         android:orientation="horizontal"
+         >
          <RadioButton
              android:id="@+id/radio_wdzp"
              android:layout_width="0px"
              android:layout_height="wrap_content"
              android:layout_weight="1"
+             android:button="@null"
+             android:gravity="center"
+             android:padding="10px"
+             android:drawableTop="@drawable/ic_wjj"
              android:text="我的作品"/>
          <RadioButton
              android:id="@+id/radio_sz"
              android:layout_width="0px"
-             android:layout_weight="1"
              android:layout_height="wrap_content"
+             android:layout_weight="1"
+             android:gravity="center"
+             android:padding="10px"
+             android:button="@null"
+             android:drawableTop="@drawable/ic_sz"
              android:text="设置"/>
      </RadioGroup>
 
