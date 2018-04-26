@@ -35,14 +35,13 @@ public class tuijian extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View inflate = inflater.inflate(R.layout.fragment_tuijian, null);
         unbinder = ButterKnife.bind(this, inflate);
-
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+        tabLayout.setTabMode(TabLayout.MODE_FIXED);
         final List<String> list = new ArrayList<>();
         //添加 2条数据,作为tablayout标签
         list.add("热门");
         list.add("关注");
-        tabLayout.addTab(tabLayout.newTab().setText(list.get(0)),true);
-        tabLayout.addTab(tabLayout.newTab().setText(list.get(1)),false);
-        viewPager.setOffscreenPageLimit(list.size());
+       viewPager.setOffscreenPageLimit(list.size());
         viewPager.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
             private remen remen;
             private guanzhu guanzhu;
