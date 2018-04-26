@@ -5,13 +5,20 @@ import base.BaseActivity;
 
 import android.graphics.Color;
 import android.net.Uri;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 
 import com.facebook.drawee.view.SimpleDraweeView;
+
+import org.w3c.dom.Text;
 
 import duanzi.view.fragment.Fragment_duanzi;
 import shiping.view.fragment.Fragment_shiping;
@@ -24,8 +31,14 @@ public class ShowActivity extends BaseActivity {
     private RadioGroup gr;
 
     private RadioButton zx,hq;
-    private SimpleDraweeView sdv;
+    private SimpleDraweeView sdv,sdv1;
     private String imageUrl = "http://a.hiphotos.baidu.com/image/pic/item/314e251f95cad1c847e70404733e6709c93d51b1.jpg";
+    private DrawerLayout drawerLayout;
+    private RelativeLayout menu;
+    private TextView nc,text_gxqm,yjms;
+    private RecyclerView r_v;
+    private RadioGroup radio_group;
+    private RadioButton radio_wdzp,radio_sz;
 
     private void setTextColor(RadioButton sy,RadioButton zx,RadioButton hq){
         sy.setTextColor(Color.BLUE);
@@ -50,9 +63,26 @@ public class ShowActivity extends BaseActivity {
         zx = (RadioButton) findViewById(R.id.zixuan);
         hq = (RadioButton) findViewById(R.id.hangqing);
         sdv = (SimpleDraweeView) findViewById(R.id.sdv);
+        sdv1 = (SimpleDraweeView) findViewById(R.id.sdv1);//侧拉页面的头像
+        nc = (TextView) findViewById(R.id.text_nc);//昵称
+        text_gxqm = (TextView) findViewById(R.id.text_gxqm);//个性签名
+        r_v = (RecyclerView) findViewById(R.id.recycler_view);//侧拉列表
+         yjms =(TextView) findViewById(R.id.text_yjms);//夜间模式
+        radio_group = (RadioGroup) findViewById(R.id.radio_group1);
+        radio_wdzp = (RadioButton) findViewById(R.id.radio_wdzp);
+        radio_sz = (RadioButton) findViewById(R.id.radio_sz);
+        drawerLayout = (DrawerLayout)findViewById(R.id.drawer);
+        menu = (RelativeLayout) findViewById(R.id.menu);
+        sdv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawerLayout.openDrawer(menu);//打开菜单
+            }
+        });
         //Fresco的简单使用
         Uri uri = Uri.parse(imageUrl);
         sdv.setImageURI(uri);
+        sdv1.setImageURI(uri);
 
         //设置初始fragment页面
         getSupportFragmentManager().beginTransaction().
