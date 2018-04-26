@@ -6,7 +6,10 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.RecyclerView;
+import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -77,6 +80,7 @@ public class ShowActivity extends BaseActivity {
         Uri uri = Uri.parse(imageUrl);
         sdv.setImageURI(uri);
         sdv1.setImageURI(uri);
+        setImageSize();
 
         //设置初始fragment页面
         getSupportFragmentManager().beginTransaction().
@@ -107,4 +111,19 @@ public class ShowActivity extends BaseActivity {
         });
 
     }
+    /**
+     * 动态设置图片大小
+     */
+    private void setImageSize() {
+        final WindowManager manager = this.getWindowManager();
+        //得出屏幕宽度
+        DisplayMetrics outMetrics = new DisplayMetrics();
+        manager.getDefaultDisplay().getMetrics(outMetrics);
+        int widthPixels = outMetrics.widthPixels;
+        //重新计算高度
+        ViewGroup.LayoutParams layoutParams = menu.getLayoutParams();
+        layoutParams.width = (int) (0.778 * widthPixels);
+        menu.setLayoutParams(layoutParams);
+    }
+    
 }
