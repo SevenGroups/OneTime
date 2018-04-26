@@ -1,9 +1,18 @@
 package com.bw.com.onetimedemo;
 import base.BaseActivity;
 import android.graphics.Color;
+import android.net.Uri;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+<<<<<<< HEAD
+=======
+
+
+import com.facebook.drawee.view.SimpleDraweeView;
+
+>>>>>>> 788a4e15c9918548bd2f69deabd254a6d27fc1e7
 import duanzi.view.fragment.Fragment_duanzi;
 import shiping.view.fragment.Fragment_shiping;
 import tuijian.fragment.tuijian;
@@ -15,6 +24,9 @@ public class ShowActivity extends BaseActivity {
     private RadioGroup gr;
 
     private RadioButton zx,hq;
+    private SimpleDraweeView sdv;
+    private String imageUrl = "http://a.hiphotos.baidu.com/image/pic/item/314e251f95cad1c847e70404733e6709c93d51b1.jpg";
+
     private void setTextColor(RadioButton sy,RadioButton zx,RadioButton hq){
         sy.setTextColor(Color.BLUE);
         zx.setTextColor(Color.BLACK);
@@ -37,6 +49,10 @@ public class ShowActivity extends BaseActivity {
         sy = (RadioButton) findViewById(R.id.shouye);
         zx = (RadioButton) findViewById(R.id.zixuan);
         hq = (RadioButton) findViewById(R.id.hangqing);
+        sdv = (SimpleDraweeView) findViewById(R.id.sdv);
+        //Fresco的简单使用
+        Uri uri = Uri.parse(imageUrl);
+        sdv.setImageURI(uri);
 
         //设置初始fragment页面
         getSupportFragmentManager().beginTransaction().
