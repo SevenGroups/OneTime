@@ -6,13 +6,11 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-<<<<<<< HEAD
-=======
 
 
 import com.facebook.drawee.view.SimpleDraweeView;
 
->>>>>>> 788a4e15c9918548bd2f69deabd254a6d27fc1e7
+
 import duanzi.view.fragment.Fragment_duanzi;
 import shiping.view.fragment.Fragment_shiping;
 import tuijian.fragment.tuijian;
