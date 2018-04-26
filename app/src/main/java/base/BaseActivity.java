@@ -29,7 +29,7 @@ public abstract class BaseActivity extends AutoLayoutActivity {
         setContentView(bindLayout());
         ButterKnife.bind(this);
         //设置状态栏沉浸式
-        setStatus(true);
+       // setStatus(true);
         //是否显示actionbar 标题栏
         setAction(false);
         initData();
