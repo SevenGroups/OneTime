@@ -7,6 +7,6 @@ import java.net.URL;
  */
 
 public class Api {
-    //共用接口
+    //共用接口https://www.zhaoapi.cn/quarter/getAd
     public static  String URL="https://www.zhaoapi.cn/";
 }

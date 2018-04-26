@@ -2,6 +2,7 @@ package com.bw.com.onetimedemo.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +20,7 @@ import java.util.List;
  * Created by tangxueqin on 2018/4/26.
  */
 
-public class MysidepullAdapter extends RecyclerView.Adapter<MysidepullAdapter.GoodsViewHoder> {
+public class MysidepullAdapter extends RecyclerView.Adapter<MysidepullAdapter.GoodsViewHoder>{
     private Context context;
     private List<SidePullBean> list=new ArrayList<>();
 
@@ -33,6 +34,7 @@ public class MysidepullAdapter extends RecyclerView.Adapter<MysidepullAdapter.Go
 
         View view = LayoutInflater.from(context).inflate(R.layout.itme_side_pull, parent,false);
 
+
         return new GoodsViewHoder(view);
     }
 
@@ -41,6 +43,13 @@ public class MysidepullAdapter extends RecyclerView.Adapter<MysidepullAdapter.Go
 
         holder.titiel.setText(list.get(position).getName());
         Glide.with(context).load(list.get(position).getImg()).into(holder.img);
+        holder.titiel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               // Log.i("+++",position+"");
+                listner.onItemClick(view,position);
+            }
+        });
 
     }
 
@@ -48,6 +57,7 @@ public class MysidepullAdapter extends RecyclerView.Adapter<MysidepullAdapter.Go
     public int getItemCount() {
         return list.size();
     }
+
 
     class GoodsViewHoder extends RecyclerView.ViewHolder{
         ImageView img;
@@ -58,5 +68,10 @@ public class MysidepullAdapter extends RecyclerView.Adapter<MysidepullAdapter.Go
             titiel = (TextView)itemView.findViewById(R.id.text_n);
 
         }
+    }
+    //设置条目点击事件
+    private OnItemClickListner listner;
+    public void setClick(OnItemClickListner listner){
+        this.listner=listner;
     }
 }

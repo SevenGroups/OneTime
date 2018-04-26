@@ -8,6 +8,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -19,6 +20,7 @@ import android.widget.TextView;
 import tuijian.fragment.tuijian;
 
 import com.bw.com.onetimedemo.adapter.MysidepullAdapter;
+import com.bw.com.onetimedemo.adapter.OnItemClickListner;
 import com.bw.com.onetimedemo.bean.SidePullBean;
 import com.facebook.drawee.view.SimpleDraweeView;
 
@@ -127,6 +129,12 @@ public class ShowActivity extends BaseActivity {
         MysidepullAdapter adapter=new MysidepullAdapter(this,list);
         r_v.setLayoutManager(new LinearLayoutManager(ShowActivity.this));
         r_v.setAdapter(adapter);
+        adapter.setClick(new OnItemClickListner() {
+            @Override
+            public void onItemClick(View view, int cid) {
+                Log.i("+++",cid+"");
+            }
+        });
 
 
 
