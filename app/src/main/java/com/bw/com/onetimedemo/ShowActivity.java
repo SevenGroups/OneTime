@@ -23,7 +23,6 @@ public class ShowActivity extends BaseActivity {
 
     private FrameLayout zhan;
     private RadioGroup gr;
-
     private RadioButton zx,hq;
     private SimpleDraweeView sdv,sdv1;
     private String imageUrl = "http://a.hiphotos.baidu.com/image/pic/item/314e251f95cad1c847e70404733e6709c93d51b1.jpg";
