@@ -3,8 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#888">
-<android.support.v7.widget.RecyclerView
+<com.jcodecraeer.xrecyclerview.XRecyclerView
+    android:id="@+id/xrv"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/rv"/>
+    android:layout_height="match_parent"/>
 </LinearLayout>
