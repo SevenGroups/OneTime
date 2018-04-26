@@ -5,4 +5,5 @@ package tuijian;
  */
 
 public interface Apiservise1 {
+
 }

@@ -9,8 +9,6 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewParent;
-import android.widget.TableLayout;
 import com.bw.com.onetimedemo.R;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,13 +37,13 @@ public class tuijian extends Fragment {
         unbinder = ButterKnife.bind(this, inflate);
 
         final List<String> list = new ArrayList<>();
-        //添加 4条数据,作为tablayout标签
+        //添加 2条数据,作为tablayout标签
         list.add("热门");
         list.add("关注");
-        viewPager.setOffscreenPageLimit(list.size());
+        tabLayout.addTab(tabLayout.newTab().setText(list.get(0)),true);
+        tabLayout.addTab(tabLayout.newTab().setText(list.get(1)),false);
         viewPager.setOffscreenPageLimit(list.size());
         viewPager.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
-
             private remen remen;
             private guanzhu guanzhu;
 

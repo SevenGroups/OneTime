@@ -1,15 +1,9 @@
 package com.bw.com.onetimedemo;
-
 import base.BaseActivity;
-
-
 import android.graphics.Color;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-
-
-
 import duanzi.view.fragment.Fragment_duanzi;
 import shiping.view.fragment.Fragment_shiping;
 import tuijian.fragment.tuijian;
