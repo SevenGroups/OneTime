@@ -1,8 +1,5 @@
 package com.bw.com.onetimedemo;
-
 import base.BaseActivity;
-
-
 import android.graphics.Color;
 import android.net.Uri;
 import android.support.v4.widget.DrawerLayout;
@@ -18,7 +15,10 @@ import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 
+<<<<<<< HEAD
 import org.w3c.dom.Text;
+=======
+>>>>>>> 76b206565fdf25bcd8eb70a0b6056fa7f2c7fa83
 
 import duanzi.view.fragment.Fragment_duanzi;
 import shiping.view.fragment.Fragment_shiping;
