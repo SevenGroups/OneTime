@@ -1,29 +1,23 @@
 package com.bw.com.onetimedemo;
-import base.BaseActivity;
+
+
+
 import android.graphics.Color;
 import android.net.Uri;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-
+import tuijian.fragment.tuijian;
 import com.facebook.drawee.view.SimpleDraweeView;
 
-<<<<<<< HEAD
-import org.w3c.dom.Text;
-=======
->>>>>>> 76b206565fdf25bcd8eb70a0b6056fa7f2c7fa83
-
+import base.BaseActivity;
 import duanzi.view.fragment.Fragment_duanzi;
 import shiping.view.fragment.Fragment_shiping;
-import tuijian.fragment.tuijian;
-
 
 public class ShowActivity extends BaseActivity {
 
