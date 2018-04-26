@@ -8,5 +8,5 @@ import java.net.URL;
 
 public class Api {
     //共用接口
-    public static final String URL="https://www.zhaoapi.cn/";
+    public static  String URL="https://www.zhaoapi.cn/";
 }

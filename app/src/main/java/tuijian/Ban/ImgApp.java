@@ -1,8 +1,10 @@
-package tuijian;
+package tuijian.Ban;
 
 import android.content.Context;
+import android.net.Uri;
 import android.widget.ImageView;
-import com.bumptech.glide.Glide;
+
+import com.squareup.picasso.Picasso;
 import com.youth.banner.loader.ImageLoader;
 
 /**
@@ -12,7 +14,8 @@ import com.youth.banner.loader.ImageLoader;
 public class ImgApp extends ImageLoader {
     @Override
     public void displayImage(Context context, Object path, ImageView imageView) {
-        Glide.with(context).load(path).into(imageView);
+      //  Glide.with(context).load(path).into(imageView);
+        Picasso.with(context).load((String) path).into(imageView);
 
     }
 }

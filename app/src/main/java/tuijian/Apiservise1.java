@@ -1,7 +1,4 @@
 package tuijian;
-
-
-
 import retrofit2.http.GET;
 import rx.Observable;
 import tuijian.Bean.Lunbo;
@@ -11,6 +8,6 @@ import tuijian.Bean.Lunbo;
  */
 
 public interface Apiservise1 {
-    @GET("uarter/getAd")
+    @GET("quarter/getAd")
     Observable<Lunbo> getlun();
 }
