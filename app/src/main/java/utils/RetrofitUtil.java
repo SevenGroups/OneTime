@@ -2,8 +2,13 @@ package utils;
 
 import android.util.Log;
 
-import java.io.IOException;
+import com.bw.com.onetimedemo.BuildConfig;
+import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
+import api.Api;
 import okhttp3.FormBody;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -12,7 +17,6 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
@@ -36,26 +40,21 @@ public class RetrofitUtil {
         return RETROFIT_UTILS;
     }
 
-    public <T> T getRetrofit(String path,Class<T> cla){
-        HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
-            @Override
-            public void log(String message) {
-                Log.i("TAG",message);
-            }
-        });
-        httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-
-        OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                .addInterceptor(httpLoggingInterceptor)
-                .build();
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(path)
-                .client(okHttpClient)
+    public  static Retrofit create() {
+        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+        builder.readTimeout(10, TimeUnit.SECONDS);
+        builder.connectTimeout(10, TimeUnit.SECONDS);
+        if (BuildConfig.DEBUG) {
+            HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+            interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+            builder.addInterceptor(interceptor);
+        }
+        return new Retrofit.Builder()
+                .baseUrl(Api.URL)
+                .client(builder.build())
                 .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
-        T t = retrofit.create(cla);
-        return t;
     }
 
 

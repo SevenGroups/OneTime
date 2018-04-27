@@ -1,9 +1,10 @@
 package duanzi;
 
 import duanzi.view.bean.DZBean;
+import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
-import rx.Observable;
+
 
 /**
  * Created by tangxueqin on 2018/4/25.

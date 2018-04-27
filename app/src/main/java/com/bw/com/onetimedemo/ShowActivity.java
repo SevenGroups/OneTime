@@ -133,6 +133,11 @@ public class ShowActivity extends BaseActivity {
             @Override
             public void onItemClick(View view, int cid) {
                 Log.i("+++",cid+"");
+                switch (cid){
+                    case 0:
+                        startActivity(MyGuanZhuActivity.class);
+                        break;
+                }
             }
         });
 
