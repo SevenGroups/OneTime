@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import base.BaseActivity;
-import duanzi.view.fragment.Fragment_duanzi;
+import duanzi.fragment.Fragment_duanzi;
 import shiping.view.fragment.Fragment_shiping;
 
 public class ShowActivity extends BaseActivity {

@@ -1,20 +1,10 @@
 package utils;
 
-import android.util.Log;
-
 import com.bw.com.onetimedemo.BuildConfig;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
-
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
-
-import api.Api;
-import okhttp3.FormBody;
-import okhttp3.Interceptor;
+import api.Api;;
 import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

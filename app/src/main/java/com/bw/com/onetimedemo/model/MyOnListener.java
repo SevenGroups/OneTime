@@ -10,6 +10,4 @@ import io.reactivex.disposables.CompositeDisposable;
 
 public interface MyOnListener {
     void OnGetSuccessY(RemMenGuanZhuBean o);
-
-
 }
