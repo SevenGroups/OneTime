@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+ <ImageView
+     android:src="@mipmap/ic_launcher"
+     android:id="@+id/im"
+     android:layout_width="75px"
+     android:layout_height="66px" />
+    <duanzi.view.CustomerView
+        android:layout_marginTop="20px"
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:layout_alignParentRight="true"/>
+     <TextView
+         android:textSize="16sp"
+         android:layout_toRightOf="@+id/im"
+         android:id="@+id/te_name"
+         android:layout_width="200px"
+         android:layout_height="wrap_content" />
+    <TextView
+        android:layout_toRightOf="@+id/im"
+        android:layout_below="@+id/te_name"
+        android:id="@+id/time"
+        android:layout_margin="5px"
+        android:layout_width="200px"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_toRightOf="@+id/im"
+        android:layout_below="@+id/time"
+        android:id="@+id/biao"
+        android:layout_margin="10px"
+        android:layout_width="210px"
+        android:layout_height="wrap_content" />
+
+    <fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard
+        android:layout_below="@+id/biao"
+        android:layout_margin="15px"
+        android:id="@+id/videoplayer"
+        android:layout_width="match_parent"
+        android:layout_height="270dp" />
+
+</RelativeLayout>
