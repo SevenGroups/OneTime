@@ -15,5 +15,6 @@ public interface Apiservice {
     //热门关注quarter/getHotVideos?page=2&source=android&appVersion=101&token=0
     @GET("quarter/getHotVideos")
     Observable<RemMenGuanZhuBean> getGuanZhu(@Query("page") String page, @Query("source") String source, @Query("appVersion") String appVersion, @Query("token") String token);
+    //视频作品详情https://www.zhaoapi.cn/quarter/getVideoDetail?wid=1
 
 }

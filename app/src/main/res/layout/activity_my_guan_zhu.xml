@@ -1,9 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.bw.com.onetimedemo.MyGuanZhuActivity">
+    <RelativeLayout
+        android:background="@color/colorl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20px"
+        >
+        <TextView
+            android:id="@+id/t_fh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="返回"
+            android:textColor="@color/colorb"
+            android:textSize="28px"
+            />
+        <TextView
+            android:id="@+id/t_gz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我的关注"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/colorb"
+            android:textSize="28px"
+            />
+        <TextView
+            android:id="@+id/t_rmgz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="热门关注"
+            android:textColor="@color/colorb"
+            android:textSize="28px"
+            android:layout_alignParentRight="true"
+            />
+        <EditText
+            android:layout_width="200px"
+            android:layout_height="wrap_content"
+            android:id="@+id/edit_text"
+            android:hint="输入关键字"
+            android:textSize="15px"
+            android:padding="10px"
+            android:drawableRight="@drawable/ic_fdj"
+            android:layout_alignParentRight="true"
+            android:visibility="invisible"
+            android:background="@drawable/edit_shape"
+            />
+    </RelativeLayout>
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/x_v_gz"
+        ></com.jcodecraeer.xrecyclerview.XRecyclerView>
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
