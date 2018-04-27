@@ -44,6 +44,7 @@ public class ShowActivity extends BaseActivity {
     private RecyclerView r_v;
     private RadioGroup radio_group;
     private RadioButton radio_wdzp,radio_sz;
+    private TextView frag_name;
     private List<SidePullBean> list=new ArrayList<>();
 
     private void setTextColor(RadioButton sy,RadioButton zx,RadioButton hq){
@@ -63,6 +64,7 @@ public class ShowActivity extends BaseActivity {
     @Override
     public void initData() {
         //找控件
+        frag_name =(TextView) findViewById(R.id.frag_name);
         zhan = (FrameLayout)findViewById(R.id.zhan);
         gr = (RadioGroup) findViewById(R.id.gr);
         sy = (RadioButton) findViewById(R.id.shouye);
@@ -103,16 +105,19 @@ public class ShowActivity extends BaseActivity {
                         getSupportFragmentManager().beginTransaction().
                                 replace(R.id.zhan,new tuijian()).commit();
                         setTextColor(sy,zx,hq);
+                        frag_name.setText("推荐");
                         break;
                     case R.id.zixuan:
                         getSupportFragmentManager().beginTransaction().
                                 replace(R.id.zhan,new Fragment_duanzi()).commit();
                         setTextColor(zx,sy,hq);
+                        frag_name.setText("段子");
                         break;
                     case R.id.hangqing:
                         getSupportFragmentManager().beginTransaction().
                                 replace(R.id.zhan,new Fragment_shiping()).commit();
                         setTextColor(hq,sy,zx);
+                        frag_name.setText("视频");
                         break;
 
                 }

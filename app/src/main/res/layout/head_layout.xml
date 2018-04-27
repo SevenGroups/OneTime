@@ -9,14 +9,14 @@
         android:id="@+id/sdv"
         android:layout_width="90px"
         android:layout_height="90px"
-        app:roundedCornerRadius="100px"
-        />
+        app:roundedCornerRadius="100px" />
     <TextView
+        android:id="@+id/frag_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="推荐"
         android:textColor="@color/colorb"
-     android:paddingTop="25px"
+        android:paddingTop="25px"
         android:layout_centerHorizontal="true"
         android:textSize="38px"
         />

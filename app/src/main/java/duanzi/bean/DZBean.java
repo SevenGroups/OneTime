@@ -151,7 +151,7 @@ public class DZBean {
             private String fans;
             private boolean follow;
             private Object icon;
-            private Object nickname;
+            private String nickname;
             private String praiseNum;
 
             public Object getAge() {
@@ -186,11 +186,11 @@ public class DZBean {
                 this.icon = icon;
             }
 
-            public Object getNickname() {
+            public String getNickname() {
                 return nickname;
             }
 
-            public void setNickname(Object nickname) {
+            public void setNickname(String nickname) {
                 this.nickname = nickname;
             }
 

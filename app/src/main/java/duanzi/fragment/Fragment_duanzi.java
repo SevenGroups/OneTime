@@ -3,6 +3,7 @@ package duanzi.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,8 @@ import android.view.ViewGroup;
 import com.bw.com.onetimedemo.R;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import java.util.List;
+
+import duanzi.adapter.MyXRVAdapter;
 import duanzi.bean.DZBean;
 import duanzi.presenter.DZPresenter;
 import duanzi.view.DZView;
@@ -20,7 +23,9 @@ import duanzi.view.DZView;
 
 public class Fragment_duanzi extends Fragment implements DZView{
     private XRecyclerView xrv;
-    private int page;
+    private int page=1;
+    private int count;
+    private MyXRVAdapter adapter;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -34,7 +39,26 @@ public class Fragment_duanzi extends Fragment implements DZView{
 
     @Override
     public void getDZData(List<DZBean.DataBean> batabean) {
-        Log.i("lll",batabean.get(1).getCreateTime()+"");
+        adapter = new MyXRVAdapter(getActivity(), batabean);
+        xrv.setAdapter(adapter);
+        xrv.setLayoutManager(new LinearLayoutManager(getActivity()));
+        xrv.setPullRefreshEnabled(true);
+        xrv.setLoadingMoreEnabled(true);
+        xrv.setLoadingListener(new XRecyclerView.LoadingListener() {
+            @Override
+            public void onRefresh() {
+                page=1;
+                adapter.notifyDataSetChanged();
+                xrv.refreshComplete();
+            }
+
+            @Override
+            public void onLoadMore() {
+                page++;
+                adapter.notifyDataSetChanged();
+                xrv.loadMoreComplete();
+            }
+        });
     }
 
     @Override

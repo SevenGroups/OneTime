@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120px">
+        <ImageView
+            android:id="@+id/dz_img"
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_margin="10px"/>
+        <duanzi.view.CustomerView
+            android:layout_width="match_parent"
+            android:layout_height="90px"
+            android:layout_alignParentRight="true"/>
+        <TextView
+            android:textColor="#f00"
+            android:id="@+id/dz_title"
+            android:layout_toRightOf="@id/dz_img"
+            android:layout_marginTop="10px"
+            android:text="天蝎喝牛奶"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/dz_time"
+            android:text="2018-04-27  14:13"
+            android:layout_toRightOf="@id/dz_img"
+            android:layout_below="@id/dz_title"
+            android:layout_marginTop="20px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/dz_nr"
+        android:layout_marginLeft="20px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

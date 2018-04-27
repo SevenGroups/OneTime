@@ -38,7 +38,7 @@ public class tuijian extends Fragment {
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         tabLayout.setTabMode(TabLayout.MODE_FIXED);
         final List<String> list = new ArrayList<>();
-        //添加 2条数据,作为tablayout标签
+        //add 2条数据,作为tablayout标签
         list.add("热门");
         list.add("关注");
        viewPager.setOffscreenPageLimit(list.size());
