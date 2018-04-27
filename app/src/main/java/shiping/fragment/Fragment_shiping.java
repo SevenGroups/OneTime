@@ -1,4 +1,4 @@
-package shiping.view.fragment;
+package shiping.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

@@ -29,7 +29,7 @@ import java.util.List;
 
 import base.BaseActivity;
 import duanzi.fragment.Fragment_duanzi;
-import shiping.view.fragment.Fragment_shiping;
+import shiping.fragment.Fragment_shiping;
 
 public class ShowActivity extends BaseActivity {
 
