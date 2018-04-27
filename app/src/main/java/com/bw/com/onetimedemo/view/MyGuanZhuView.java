@@ -11,5 +11,4 @@ import java.util.List;
 public interface MyGuanZhuView {
     void getGuanZhu(List<RemMenGuanZhuBean.DataBean> batabean);
     void Error(String error);
-
 }

@@ -1,4 +1,4 @@
-package duanzi.view.bean;
+package duanzi.bean;
 
 import java.util.List;
 
