@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.bw.com.onetimedemo.apis.Apiservice;
 import com.bw.com.onetimedemo.bean.RemMenGuanZhuBean;
+import com.bw.com.onetimedemo.bean.ShiPinZuoPinBean;
 
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -61,6 +62,42 @@ public class IModel {
                       //  Toast.makeText(MainActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
                     }
                 });
+
+    }
+    public void ShiPinZuoPinData(String uid,String page,String source,String appVersion,String token,final MyOnListener1 listener) {
+        Apiservice apiservice = RetrofitUtil.getInData().create().create(Apiservice.class);
+        apiservice.getShiPinZuoPin(uid,page,source,appVersion,token)
+                .subscribeOn(Schedulers.io())//网络是耗时操作,所以在io线程中去执行
+                .observeOn(AndroidSchedulers.mainThread())//请求成功后回到主线程中
+                .subscribe(new Observer<ShiPinZuoPinBean>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        //保存Disposable
+                        disposables.add(d);
+                    }
+
+                    @Override
+                    public void onNext(ShiPinZuoPinBean loginResponse) {
+                        Log.d("MainActivity", "登录成功:"+loginResponse.getCode());
+
+                        listener.OnGetSuccessZ(loginResponse);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                        // Toast.makeText(MainActivity.this, "登录失败", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        //  Toast.makeText(MainActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+    }
+    public interface MyOnListener1 {
+        void OnGetSuccessZ(ShiPinZuoPinBean o);
 
     }
 
