@@ -1,10 +1,14 @@
 package com.bw.com.onetimedemo;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.bw.com.onetimedemo.adapter.GuanZhuAdapter;
+import com.bw.com.onetimedemo.adapter.OnItemClickListner;
 import com.bw.com.onetimedemo.bean.RemMenGuanZhuBean;
 import com.bw.com.onetimedemo.presenter.GuanZhuPresenter;
 import com.bw.com.onetimedemo.view.MyGuanZhuView;
@@ -29,6 +33,7 @@ public class MyGuanZhuActivity extends BaseActivity implements MyGuanZhuView,Vie
     @BindView(R.id.x_v_gz)
     XRecyclerView xVGz;
     private GuanZhuPresenter presenter;
+    private GuanZhuAdapter adapter;
 
 
     @Override
@@ -40,16 +45,21 @@ public class MyGuanZhuActivity extends BaseActivity implements MyGuanZhuView,Vie
     public void initData() {
         presenter = new GuanZhuPresenter(this);
         presenter.attachView(this);
+        xVGz.setLayoutManager(new LinearLayoutManager(MyGuanZhuActivity.this));
         //page=2&source=android&appVersion=101&token=0
         presenter.getGoodsList("2", "android", "101", "0");
         tFh.setOnClickListener(this);
         tGz.setOnClickListener(this);
         tRmgz.setOnClickListener(this);
         editText.setOnClickListener(this);
+
     }
 
     @Override
-    public void getGuanZhu(List<RemMenGuanZhuBean.DataBean> batabean) {
+    public void getGuanZhu(final List<RemMenGuanZhuBean.DataBean> batabean) {
+
+        adapter = new GuanZhuAdapter(this,batabean);
+        xVGz.setAdapter(adapter);
 
     }
 
