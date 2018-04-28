@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +17,11 @@ import com.bw.com.onetimedemo.ShiPinZuoPinActivity;
 import com.bw.com.onetimedemo.bean.RemMenGuanZhuBean;
 import com.bw.com.onetimedemo.bean.ShiPinZuoPinBean;
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
+
+import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 
 /**
  * Created by tangxueqin on 2018/4/26.
@@ -51,14 +55,14 @@ public class ShiPinZuoPinAdapter extends RecyclerView.Adapter<ShiPinZuoPinAdapte
       holder.itme_1.setText(list.get(position).getCreateTime());
         Uri uri = Uri.parse(icon);
         holder.img1.setImageURI(uri);
-        Glide.with(context).load(list.get(position).getCover()).into(holder.img_sp);
-        holder.img_bf.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //播放视频
+        Uri uri1 = Uri.parse( list.get(position).getCover());
+        JCVideoPlayerStandard jcVideoPlayerStandard = (JCVideoPlayerStandard) view.findViewById(R.id.img_sp);
+        jcVideoPlayerStandard.TOOL_BAR_EXIST = false;
+        jcVideoPlayerStandard.setUp(list.get(position).getVideoUrl(),JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL);
+        Picasso.with(context).load(list.get(position).getCover()).into(jcVideoPlayerStandard.thumbImageView);
+        jcVideoPlayerStandard.widthRatio = 4;//播放比例
+        jcVideoPlayerStandard.heightRatio = 3;
 
-            }
-        });
     }
 
     @Override
@@ -68,7 +72,6 @@ public class ShiPinZuoPinAdapter extends RecyclerView.Adapter<ShiPinZuoPinAdapte
 
 
     class GoodsViewHoder extends RecyclerView.ViewHolder{
-        ImageView img_sp,img_bf;
         TextView t_ncc,itme_1,time;
 
         SimpleDraweeView img1;
@@ -76,8 +79,6 @@ public class ShiPinZuoPinAdapter extends RecyclerView.Adapter<ShiPinZuoPinAdapte
         public GoodsViewHoder(View itemView) {
             super(itemView);
             img1 = (SimpleDraweeView) itemView.findViewById(R.id.sdv4);
-            img_sp =(ImageView) itemView.findViewById(R.id.img_sp);
-            img_bf =(ImageView) itemView.findViewById(R.id.img_bf);
             t_ncc = (TextView)itemView.findViewById(R.id.t_ncc);
             itme_1 = (TextView)itemView.findViewById(R.id.itme_1);
 

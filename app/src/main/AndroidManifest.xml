@@ -34,7 +34,9 @@
 
         <activity android:name=".MyGuanZhuActivity" />
         <activity android:name=".ShiPingXQActivity" />
-        <activity android:name=".ShiPinZuoPinActivity"></activity>
+        <activity android:name=".ShiPinZuoPinActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

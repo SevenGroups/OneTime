@@ -1,6 +1,7 @@
 package com.bw.com.onetimedemo.model;
 
 import com.bw.com.onetimedemo.bean.RemMenGuanZhuBean;
+import com.bw.com.onetimedemo.bean.ShiPinZuoPinBean;
 
 import io.reactivex.disposables.CompositeDisposable;
 
@@ -10,4 +11,5 @@ import io.reactivex.disposables.CompositeDisposable;
 
 public interface MyOnListener {
     void OnGetSuccessY(RemMenGuanZhuBean o);
+
 }

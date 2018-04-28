@@ -11,6 +11,7 @@ import com.bw.com.onetimedemo.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
+
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 import tuijian.Bean.Shipin;
 
@@ -18,19 +19,19 @@ import tuijian.Bean.Shipin;
  * Created by Lenovo on 2018/4/27.
  */
 
-public class Sadapter extends RecyclerView.Adapter<Sadapter.Sviewholder> {
+public class Gadapter extends RecyclerView.Adapter<Gadapter.Sviewholder> {
     List<Shipin.DataBean> shipin;
     Context context;
     private View inflate;
 
-    public Sadapter(List<Shipin.DataBean> shipin, Context context) {
+    public Gadapter(List<Shipin.DataBean> shipin, Context context) {
         this.shipin = shipin;
         this.context = context;
     }
 
     @Override
     public Sviewholder onCreateViewHolder(ViewGroup parent, int viewType) {
-        inflate = View.inflate(context, R.layout.shipin, null);
+        inflate = View.inflate(context, R.layout.guan,null);
         Sviewholder sviewholder = new Sviewholder(inflate);
         return sviewholder;
     }
@@ -52,7 +53,7 @@ public class Sadapter extends RecyclerView.Adapter<Sadapter.Sviewholder> {
 
     @Override
     public int getItemCount() {
-        return shipin.size()<0?1:shipin.size();
+        return shipin.size();
     }
 
     class Sviewholder extends RecyclerView.ViewHolder{
