@@ -1,6 +1,7 @@
 package duanzi.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bw.com.onetimedemo.R;
+import com.bw.com.onetimedemo.ShiPinZuoPinActivity;
+
 import java.util.List;
 import duanzi.bean.DZBean;
 
@@ -33,11 +36,20 @@ public class MyXRVAdapter extends RecyclerView.Adapter<MyXRVAdapter.MyViewHoder>
     }
 
     @Override
-    public void onBindViewHolder(MyViewHoder holder, int position) {
+    public void onBindViewHolder(MyViewHoder holder, final int position) {
         Glide.with(context).load(batabean.get(position).getUser().getIcon()).error(R.mipmap.ic_launcher).into(holder.dz_img);
         holder.dz_title.setText(batabean.get(position).getUser().getNickname());
         holder.dz_time.setText(batabean.get(position).getCreateTime());
         holder.dz_nr.setText(batabean.get(position).getContent());
+        holder.dz_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(context,ShiPinZuoPinActivity.class);
+                intent.putExtra("uid", batabean.get(position).getUid()+"");
+                intent.putExtra("icon",batabean.get(position).getUser().getIcon()+"");
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -56,4 +68,5 @@ public class MyXRVAdapter extends RecyclerView.Adapter<MyXRVAdapter.MyViewHoder>
             dz_title = (TextView) itemView.findViewById(R.id.dz_title);
         }
     }
+
 }

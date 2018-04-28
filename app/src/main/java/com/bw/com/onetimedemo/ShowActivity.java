@@ -2,6 +2,7 @@ package com.bw.com.onetimedemo;
 
 
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.support.v4.widget.DrawerLayout;
@@ -13,20 +14,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import tuijian.fragment.tuijian;
-
 import com.bw.com.onetimedemo.adapter.MysidepullAdapter;
 import com.bw.com.onetimedemo.adapter.OnItemClickListner;
 import com.bw.com.onetimedemo.bean.SidePullBean;
+import com.bw.com.onetimedemo.view.ShangChuanActivity;
 import com.facebook.drawee.view.SimpleDraweeView;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import base.BaseActivity;
 import duanzi.fragment.Fragment_duanzi;
 import shiping.fragment.Fragment_shiping;
@@ -44,6 +44,7 @@ public class ShowActivity extends BaseActivity {
     private RecyclerView r_v;
     private RadioGroup radio_group;
     private RadioButton radio_wdzp,radio_sz;
+    private ImageView new_works;
     private TextView frag_name;
     private List<SidePullBean> list=new ArrayList<>();
 
@@ -64,6 +65,7 @@ public class ShowActivity extends BaseActivity {
     @Override
     public void initData() {
         //找控件
+        new_works = findViewById(R.id.new_works);
         frag_name =(TextView) findViewById(R.id.frag_name);
         zhan = (FrameLayout)findViewById(R.id.zhan);
         gr = (RadioGroup) findViewById(R.id.gr);
@@ -81,6 +83,13 @@ public class ShowActivity extends BaseActivity {
         radio_sz = (RadioButton) findViewById(R.id.radio_sz);
         drawerLayout = (DrawerLayout)findViewById(R.id.drawer);
         menu = (RelativeLayout) findViewById(R.id.menu);
+        new_works.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(ShowActivity.this, ShangChuanActivity.class);
+                startActivity(intent);
+            }
+        });
         sdv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -2,24 +2,18 @@ package com.bw.com.onetimedemo;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.widget.TextView;
-
 import com.bw.com.onetimedemo.adapter.ShiPinZuoPinAdapter;
 import com.bw.com.onetimedemo.bean.ShiPinZuoPinBean;
 import com.bw.com.onetimedemo.presenter.ShiPInZuoPinPresenter;
 import com.bw.com.onetimedemo.view.ShiPinGuanZhuView;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
-
 import java.util.List;
-
 import base.BaseActivity;
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class ShiPinZuoPinActivity extends BaseActivity implements ShiPinGuanZhuView {
 
@@ -69,8 +63,6 @@ public class ShiPinZuoPinActivity extends BaseActivity implements ShiPinGuanZhuV
     public void getShiPinZuoPin(List<ShiPinZuoPinBean.DataBean> batabean) {
         ShiPinZuoPinAdapter adapter=new ShiPinZuoPinAdapter(ShiPinZuoPinActivity.this,batabean,icon,nickname);
         xVShiping.setAdapter(adapter);
-
-
     }
 
     @Override

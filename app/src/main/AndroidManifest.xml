@@ -21,9 +21,10 @@
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegActivity" />
-        <activity android:name=".ShowActivity"
+        <activity
+            android:name=".ShowActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="design_width"
@@ -34,9 +35,11 @@
 
         <activity android:name=".MyGuanZhuActivity" />
         <activity android:name=".ShiPingXQActivity" />
-        <activity android:name=".ShiPinZuoPinActivity"
+        <activity
+            android:name=".ShiPinZuoPinActivity"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
+        <activity android:name=".view.ShangChuanActivity"></activity>
     </application>
 
 </manifest>

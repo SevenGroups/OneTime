@@ -47,14 +47,14 @@ public class Fragment_duanzi extends Fragment implements DZView{
         xrv.setLoadingListener(new XRecyclerView.LoadingListener() {
             @Override
             public void onRefresh() {
-                page=1;
+                page++;
                 adapter.notifyDataSetChanged();
                 xrv.refreshComplete();
             }
 
             @Override
             public void onLoadMore() {
-                page++;
+                page=1;
                 adapter.notifyDataSetChanged();
                 xrv.loadMoreComplete();
             }

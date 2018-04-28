@@ -60,7 +60,6 @@ public class GuanZhuAdapter extends RecyclerView.Adapter<GuanZhuAdapter.GoodsVie
                 Intent intent=new Intent(context,ShiPinZuoPinActivity.class);
                 intent.putExtra("uid", list.get(position).getUid()+"");
                 intent.putExtra("icon",list.get(position).getUser().getIcon());
-
                 context.startActivity(intent);
             }
         });

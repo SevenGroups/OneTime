@@ -4,13 +4,10 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
-
 import com.zhy.autolayout.AutoLayoutActivity;
-
 import butterknife.ButterKnife;
 
 /**
@@ -39,7 +36,7 @@ public abstract class BaseActivity extends AutoLayoutActivity {
     public abstract int bindLayout();
     //初始化数据
     public abstract void initData();
-    ////透明状态栏方法
+    //透明状态栏方法
     public void setStatus(boolean isstatus) {
         this.isstatus = isstatus;
         if (isstatus) {

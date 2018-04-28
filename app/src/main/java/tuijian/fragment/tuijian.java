@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import com.bw.com.onetimedemo.R;
 import java.util.ArrayList;
 import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
