@@ -5,5 +5,5 @@ package shiping.api;
  */
 
 public interface Apiservise3 {
-    
+
 }
