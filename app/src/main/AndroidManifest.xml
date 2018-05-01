@@ -39,7 +39,8 @@
             android:name=".ShiPinZuoPinActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
-        <activity android:name=".view.ShangChuanActivity"></activity>
+        <activity android:name=".view.ShangChuanActivity" />
+        <activity android:name="shiping.view.activity.KanShiPinActivity"></activity>
     </application>
 
 </manifest>
